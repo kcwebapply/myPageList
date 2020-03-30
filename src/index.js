@@ -1,10 +1,36 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
+import { createStore } from 'redux';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux';
+import PageReducer  from './reducer/PageReducer';
+import PageContainer from './container/PageContainer';
+import {init,fetchPages} from './infrastructure/db';
+import {router} from '../server.js';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+
+
+// Create a database
+
+
+
+const store = createStore(PageReducer);
+
+function renderApp(store){
+    render (
+        <Provider store={store}>
+           <PageContainer>
+          </PageContainer>
+        </Provider>,
+        document.getElementById("root")
+    );
+}
+
+
+
+renderApp(store);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
