@@ -20,7 +20,6 @@ const fetchPages = (callback) => {
             "title":row.url,
             "tags":row.tags
           });
-          console.log(row.id + ' ' + row.url);
       });
       resolve(response);
     });
