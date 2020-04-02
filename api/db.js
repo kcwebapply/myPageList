@@ -6,7 +6,7 @@ const init = () => {
 }
 
 
-const fetchPages = (callback) => {
+const fetchPages = () => {
   return new Promise((resolve,reject) => {
     var response = [];
     db.all('SELECT * FROM page', function(err, rows) {
@@ -17,7 +17,7 @@ const fetchPages = (callback) => {
           response.push({
             "id":row.id,
             "url":row.url,
-            "title":row.url,
+            "title":row.title,
             "tags":row.tags
           });
       });
@@ -26,8 +26,22 @@ const fetchPages = (callback) => {
   });
 }
 
+const addPage  = (url,title,tags,content) => {
+  return new Promise((resolve,reject) => {
+    db.run("INSERT INTO page(url,title,tags,content) VALUES (?,?,?,?)",[url,title,tags,content]);
+    resolve();
+  });
+}
+
+const deletePage = (id) => {
+  return new Promise((resolve,reject) => {
+    db.run("DELETE FROM page where id = ?",[id]);
+    resolve();
+  });
+}
+
 
 
 module.exports =  {
-  init,fetchPages
+  init,fetchPages,addPage,deletePage
 }
