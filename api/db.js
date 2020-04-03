@@ -33,6 +33,47 @@ const addPage  = (url,title,tags,content) => {
   });
 }
 
+const searchByContent = (word) => {
+  return new Promise((resolve,reject) => {
+    console.log(word);
+    var response = [];
+    db.all(`SELECT * FROM page where content like "%${word}%"`, function(err, rows) {
+      if (err) {
+          throw err;
+        }
+      rows.forEach(function (row) {
+          response.push({
+            "id":row.id,
+            "url":row.url,
+            "title":row.title,
+            "tags":row.tags
+          });
+      });
+      resolve(response);
+    });
+  });
+}
+
+const searchByTag = (tag) => {
+  return new Promise((resolve,reject) => {
+    var response = [];
+    db.all(`SELECT * FROM page where tags like "%${tag}%"`, function(err, rows) {
+      if (err) {
+          throw err;
+        }
+      rows.forEach(function (row) {
+          response.push({
+            "id":row.id,
+            "url":row.url,
+            "title":row.title,
+            "tags":row.tags
+          });
+      });
+      resolve(response);
+    });
+  });
+}
+
 const deletePage = (id) => {
   return new Promise((resolve,reject) => {
     db.run("DELETE FROM page where id = ?",[id]);
@@ -43,5 +84,5 @@ const deletePage = (id) => {
 
 
 module.exports =  {
-  init,fetchPages,addPage,deletePage
+  init,fetchPages,addPage,deletePage,searchByContent,searchByTag
 }

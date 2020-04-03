@@ -22,11 +22,7 @@ const init = () => {
   router.post('/add',function(req,res){
     const {url,tags} = req.body;
     request.get({
-        url,
-        qs: {
-            testkey: "testvalue",
-            hoge: "hoge"
-        }
+        url
     }, function (error, response, body) {
         const $ = cheerio.load(body);
         let title = $("title").text();
@@ -42,6 +38,20 @@ const init = () => {
     db.deletePage(id).then(()=>{
       res.json("{}");
     })
+  });
+
+  router.get('/search',function(req,res){
+    const {word,tag} = req.query;
+    if(word){
+      db.searchByContent(word).then(rows => {
+        res.json(rows);
+      });
+    }else if (tag) {
+      db.searchByTag(tag).then(rows => {
+        res.json(rows);
+      });
+    }
+
   });
 
   app.use('/api/',router);
