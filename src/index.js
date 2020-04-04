@@ -5,9 +5,7 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import PageReducer  from './reducer/PageReducer';
-import PageContainer from './container/PageContainer';
-import {init,fetchPages} from './infrastructure/db';
-import {router} from '../server.js';
+import PageListContainer from './container/PageListContainer';
 
 
 
@@ -21,8 +19,8 @@ const store = createStore(PageReducer);
 function renderApp(store){
     render (
         <Provider store={store}>
-           <PageContainer>
-          </PageContainer>
+           <PageListContainer>
+          </PageListContainer>
         </Provider>,
         document.getElementById("root")
     );

@@ -8,6 +8,13 @@ const fetchPage = (pages) => ({
   },
 });
 
+const searchPage = (pages) => ({
+  type :'SEARCH_PAGE',
+  payload:{
+      pages
+  },
+});
+
 const addPage = (id,url) => ({
     type:'ADD_PAGE',
     payload:{
@@ -25,5 +32,5 @@ const deletePage = (id) => ({
 
 
 export {
-  fetchPage,addPage,deletePage
+  fetchPage,searchPage,addPage,deletePage
 };

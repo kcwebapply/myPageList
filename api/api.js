@@ -11,6 +11,11 @@ const init = () => {
     extended: true
   }));
   app.use(bodyParser.json());
+  app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
   router.get('/fetch', function(req,res){
     db.fetchPages().then(rows => {

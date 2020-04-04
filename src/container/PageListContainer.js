@@ -1,22 +1,27 @@
 import React from 'react';
 
-import {deletePage} from '../actions/PageAction';
-import PageComponent from '../components/PageComponent';
+import {fetchPage,searchPage,addPage,deletePage} from '../actions/PageAction';
+import PageListComponent from '../components/PageListComponent';
 
 import {connect} from 'react-redux';
 
 
 
+const mapStateToProps = (state) => {
+  const {pages} = state;
+  return {
+    pages
+  }
+}
 
 
 const mapDispatchToProps = (dispatch) => {
   return {
-      /*fetchPage(){
+      fetchPage(){
         fetch(`http://localhost:3001/api/fetch`, {mode: 'cors'}).then(function(response) {
           if(response.ok){
 
             response.json().then(pages => {
-              console.log("呼ばれた");
               dispatch(fetchPage(pages));
             });
           }
@@ -34,26 +39,11 @@ const mapDispatchToProps = (dispatch) => {
       },
       addPage(page){
         dispatch(addPage(page.id,page.url));
-      },*/
+      },
       deletePage(id){
-        //method: "POST",
-        fetch(`http://localhost:3001/api/delete`,
-          {mode: 'cors',
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json; charset=utf-8"
-          },
-          body: JSON.stringify({id:id})
-        }).then(function(response) {
-          console.log(response);
-          console.log("削除！",id);
-          dispatch(deletePage(id));
-        }).catch(error => {
-          console.log("叩けねえw");
-        });
-
+        dispatch(deletePage(id));
       }
   };
 }
 
-export default connect(null,mapDispatchToProps)(PageComponent);
+export default connect(mapStateToProps,mapDispatchToProps)(PageListComponent);
