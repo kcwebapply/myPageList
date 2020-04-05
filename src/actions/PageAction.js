@@ -15,11 +15,10 @@ const searchPage = (pages) => ({
   },
 });
 
-const addPage = (id,url) => ({
+const addPage = (page) => ({
     type:'ADD_PAGE',
     payload:{
-      id,
-      url
+      page
     },
 });
 

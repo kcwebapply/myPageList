@@ -2,6 +2,7 @@ const db = require('./db');
 const cheerio = require('cheerio');
 const request = require("request");
 const bodyParser = require('body-parser');
+const logger = require('morgan');
 
 const init = () => {
   var express = require('express');
@@ -11,6 +12,7 @@ const init = () => {
     extended: true
   }));
   app.use(bodyParser.json());
+  app.use(logger("short"));
   app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -29,11 +31,15 @@ const init = () => {
     request.get({
         url
     }, function (error, response, body) {
+        if (error){
+          res.status(500);
+          res.json({"error":error});
+        }
         const $ = cheerio.load(body);
         let title = $("title").text();
         const trimBody = body.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g,'');
         db.addPage(url,title,'',body).then( () => {
-          res.json(trimBody);
+          res.json({});
         });
     });
   });

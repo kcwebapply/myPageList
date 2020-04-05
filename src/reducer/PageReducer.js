@@ -35,16 +35,6 @@ export default function PageReducer(state = initialState,action){
                 ...state,
                 pages:state.pages.filter(n => n.id !== action.payload.id)
             }
-            /*state.pages.some(function(v,i){
-                console.log(v.id,action.payload.id);
-                if (v.id==action.payload.id){
-                  console.log("stateから削除！",v.id,i,state.pages.filter(n => n.id !== action.payload.id).length);
-                    return {
-                        ...state,
-                        pages:state.pages.filter(n => n.id !== action.payload.id)
-                    }
-                }
-            });*/
            return state;
         default:
             return state;
