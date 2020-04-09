@@ -20,7 +20,6 @@ const mapDispatchToProps = (dispatch) => {
       fetchPage(){
         fetch(`http://localhost:3001/api/fetch`, {mode: 'cors'}).then(function(response) {
           if(response.ok){
-            console.log("dispatch!");
             response.json().then(pages => {
               dispatch(fetchPage(pages));
             });
