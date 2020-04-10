@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import PageContainer from '../container/PageContainer';
+import InputContainer from '../container/InputContainer';
 
 
 
@@ -13,25 +14,24 @@ export default class PageListComponent extends React.Component{
   }
 
   render(){
-    const {pages,fetchPage,searchPage,addPage,deletePage} = this.props;
+    const {pages,fetchPage} = this.props;
     return (
       <div>
-        <ul>{pages.map(function(page, i) {
-          return (
-            <PageContainer page={page}/>
-          );
-          })
-        }
-        </ul>
-        <input type="button" value="add" onClick ={()=>addPage({url:this.url,tags:this.tags})} />
-        <input type="button" value="search" onClick ={()=>fetchPage()} />
-        <input type="text"  onChange={(e) => {
-          this.url=e.target.value;
-        }}/>
-        <input type="text"  onChange={(e) => {
-          this.tags=e.target.value;
-        }}/>
+        <div className="whole">
+          <InputContainer/>
+          <table>
+          <th><p>タイトル</p></th>
+          <th><p>url</p></th>
+          <th><p>タグ</p></th>
+          {pages.map(function(page, i) {
+            return (
+              <PageContainer page={page}/>
+            );
+            })
+          }
+        </table>
         </div>
+      </div>
     )
 
 
