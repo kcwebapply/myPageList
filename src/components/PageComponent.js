@@ -20,7 +20,7 @@ export default class PageComponent extends React.Component{
       </div>*/
       <tr>
         <td className="td-title"><div style={{overflow:"hidden"}}><font className="font-title">{page.title}</font></div></td>
-        <td className="td-url"><div style={{overflow:"hidden"}}><font className="font-url">{page.url}</font></div></td>
+        <td className="td-url"><div style={{overflow:"hidden"}}><a href={page.url}><font className="font-url">{page.url}</font></a></div></td>
         <td className="td-tag"><font className="font-tag">{page.tags}</font></td>
         <td><input type="button" className="button" value="削除" onClick ={()=>deletePage(page.id)} /></td>
       </tr>

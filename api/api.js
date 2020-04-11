@@ -38,7 +38,7 @@ const init = () => {
         const $ = cheerio.load(body);
         let title = $("title").text();
         const trimBody = body.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g,'');
-        db.addPage(url,title,'',body).then( () => {
+        db.addPage(url,title,tags,body).then( () => {
           res.json({});
         });
     });

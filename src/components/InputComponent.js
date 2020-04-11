@@ -37,7 +37,7 @@ export default class InputComponent extends React.Component{
     </div>
 
     <div className="input-div">
-      <div style={{width:"80%",float:"left"}}>
+      <div style={{width:"69%",float:"left"}}>
         <label className="input-title">html検索</label>
         <div className="search_bar">
           <input className="input-text" type="text" placeholder="キーワードを入力"  onChange={(e) => {
@@ -47,14 +47,13 @@ export default class InputComponent extends React.Component{
         <div className="text_underline"></div>
       </div>
 
-
-      <input type="button" value="検索" className = "button input-button"  style={{align:"right", marginLeft:"29px"}} onClick ={()=>searchPage(this.type,this.keyword)} />
-      <div class="select-wrap select-primary" style={{width:"100px"}}>
+      <div class="select-wrap select-primary" style={{marginTop:"11px",width:"100px",float:"left"}}>
           <select   onChange={(e)=>{this.type=e.target.value;}}>
            <option selected value="word">html</option>
            <option value="tag">タグ</option>
          </select>
        </div>
+      <input type="button" value="検索" className = "button input-button"  style={{float:"left", marginLeft:"29px"}} onClick ={()=>searchPage(this.type,this.keyword)} />
     </div>
   </div>);
   }

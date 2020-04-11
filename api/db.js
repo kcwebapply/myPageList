@@ -9,7 +9,7 @@ const init = () => {
 const fetchPages = () => {
   return new Promise((resolve,reject) => {
     var response = [];
-    db.all('SELECT * FROM page', function(err, rows) {
+    db.all('SELECT * FROM page ORDER BY ID desc', function(err, rows) {
       if (err) {
           throw err;
         }
@@ -37,7 +37,7 @@ const searchByContent = (word) => {
   return new Promise((resolve,reject) => {
     console.log(word);
     var response = [];
-    db.all(`SELECT * FROM page where content like "%${word}%"`, function(err, rows) {
+    db.all(`SELECT * FROM page where content like "%${word}%" ORDER BY ID desc`, function(err, rows) {
       if (err) {
           throw err;
         }
