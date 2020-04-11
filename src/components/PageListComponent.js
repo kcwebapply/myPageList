@@ -11,6 +11,8 @@ export default class PageListComponent extends React.Component{
     super(props);
     this.url="";
     this.tags="";
+    const {fetchPage} = this.props;
+    fetchPage();
   }
 
   render(){

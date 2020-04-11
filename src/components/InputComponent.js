@@ -8,6 +8,7 @@ export default class InputComponent extends React.Component{
     super(props);
     this.url = "";
     this.tags = "";
+    this.type = "word";
     this.keyword = "";
   }
 
@@ -34,6 +35,7 @@ export default class InputComponent extends React.Component{
       </div>
       <input type="button" value="登録" className="button input-button"　style={{align:"right"}} onClick ={()=>addPage({url:this.url,tags:this.tags})}/>
     </div>
+
     <div className="input-div">
       <div style={{width:"80%",float:"left"}}>
         <label className="input-title">html検索</label>
@@ -44,7 +46,15 @@ export default class InputComponent extends React.Component{
         </div>
         <div className="text_underline"></div>
       </div>
-      <input type="button" value="search" className = "button input-button"  style={{align:"right", marginLeft:"29px"}} onClick ={()=>searchPage(this.keyword)} />
+
+
+      <input type="button" value="検索" className = "button input-button"  style={{align:"right", marginLeft:"29px"}} onClick ={()=>searchPage(this.type,this.keyword)} />
+      <div class="select-wrap select-primary" style={{width:"100px"}}>
+          <select   onChange={(e)=>{this.type=e.target.value;}}>
+           <option selected value="word">html</option>
+           <option value="tag">タグ</option>
+         </select>
+       </div>
     </div>
   </div>);
   }

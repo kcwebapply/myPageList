@@ -6,8 +6,9 @@ import {connect} from 'react-redux';
 
 const mapDispatchToProps = (dispatch) => {
   return {
-      searchPage(word){
-        fetch(`http://localhost:3001/api/search?word=${word}`,{mode: 'cors'}).then(function(response) {
+      searchPage(type,value){
+        console.log(type,value);
+        fetch(`http://localhost:3001/api/search?${type}=${value}`,{mode: 'cors'}).then(function(response) {
           if(response.ok){
             response.json().then(pages => {
               dispatch(fetchPage(pages));
