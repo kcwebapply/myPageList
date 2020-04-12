@@ -1,20 +1,38 @@
 .whole{
-  width:1000px;
+  width:1200px;
   margin: auto;
   padding:10px;
 }
 
 .input-area{
-  border-width:1px;
+  /*border-width:1px;
 	border-color: #006DD9;
 	border-style: solid;
+  height: 160px;
+  /*background-color: #FF33FF;*/
 }
 
 .input-div{
-  width:900px;
+  width:1200px;
   margin: auto;
   padding:10px;
+  height: 60px;
 }
+
+.input-title{
+  font-weight: bold;
+  color:#FFFFFF;
+}
+
+.input-add-page{
+  background-color: #33CCCC;
+}
+
+.input-search{
+  background-color: #33CC99;
+}
+
+
 .input-part{
   width:40%;
   float: left;
@@ -32,19 +50,12 @@
     height: 20px;
     border: none;
     outline: none;
-    padding-bottom: 8px;
     width: 100%;
 }
 
-.input-title{
-    font-size: 16px;
-    float:left;
-    width: 100%;
-    border: none;
-    outline: none;
-    padding-top: 10px;
-    box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
-}
+/*.input-title{
+  background-color: #CCFFCC;
+}*/
 
 
 .text_underline{

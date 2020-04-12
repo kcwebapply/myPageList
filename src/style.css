@@ -4,7 +4,7 @@ html, body {
 
 :root {
   --main-font-family: 'ヒラギノ丸ゴ ProN W4','Hiragino Maru Gothic ProN';
-  --main-title-font-color:#66CC66;
+  --main-title-font-color:#00BCD4;
 }
 
 body {
@@ -57,6 +57,8 @@ main {
 
 .button {
   font-family:inherit;
+  font-size:15px;
+  font-weight: bold;
   color:#FFF;
   min-width: 64px;
   line-height: 32px;
@@ -121,24 +123,6 @@ font{
   font-weight:900;
 }
 
-.font-title{
-  color:#339933;
-  font-weight: 900;
-  padding-left:20px;
-  padding-right: 20px;
-}
-
-.font-url{
-  color:#339933;
-  padding-left:20px;
-  padding-right:20px;
-}
-
-.font-tag{
-  color:#339933;
-  padding-left:20px;
-  padding-right:20px;
-}
 
 
 

@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-
+import cancel from '../images/cancel.png';
 
 
 
@@ -12,18 +12,23 @@ export default class PageComponent extends React.Component{
 
   render(){
     const {page,deletePage} = this.props;
+    const tags = page.tags?page.tags.split(","):[];
     return (
-      /*<div >
-        <p style={{display:"inline"}}>{page.title}</p>
-        <p style={{display: "inline"}}>{page.tags}</p>
-        <input type="button" className="button" value="削除" onClick ={()=>deletePage(page.id)} />
-      </div>*/
-      <tr>
-        <td className="td-title"><div style={{overflow:"hidden"}}><font className="font-title">{page.title}</font></div></td>
-        <td className="td-url"><div style={{overflow:"hidden"}}><a href={page.url}><font className="font-url">{page.url}</font></a></div></td>
-        <td className="td-tag"><font className="font-tag">{page.tags}</font></td>
-        <td><input type="button" className="button" value="削除" onClick ={()=>deletePage(page.id)} /></td>
-      </tr>
+      <div class="box10">
+        <input type="image"  src = {cancel} style={{float:"right",width:"10px"}} onClick ={()=>deletePage(page.id)}/>
+        <div className="page-title">{page.title}</div>
+
+        <div className="page-url"><a href={page.url} style={{overflow:"hidden",position:"relative"}} target="_blank"><font className="font-url">{page.url}</font></a></div>
+        <div className="font-tag">
+        {tags.map(function(tag, i) {
+          return (
+          <a href="#" className="tag" >{tag}</a>
+          );
+          })
+        }
+        </div>
+
+      </div>
     )
 
 

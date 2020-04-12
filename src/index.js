@@ -5,6 +5,7 @@ import './index.css';
 import './style.css';
 import './text.css';
 import './select.css';
+import './page.css';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import PageReducer  from './reducer/PageReducer';

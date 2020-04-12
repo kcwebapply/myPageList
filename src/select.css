@@ -30,6 +30,7 @@ select{
     background: none transparent;
     vertical-align: middle;
     font-size: inherit;
+    font-weight: bold;
     color: inherit;
     -webkit-appearance: button;
     -moz-appearance: button;

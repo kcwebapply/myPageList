@@ -17,21 +17,23 @@ export default class PageListComponent extends React.Component{
 
   render(){
     const {pages,fetchPage} = this.props;
+    /*<table>
+    <th><p>タイトル</p></th>
+    <th><p>url</p></th>
+    <th><p>タグ</p></th>
+
+  </table>*/
     return (
       <div>
         <div className="whole">
           <InputContainer/>
-          <table>
-          <th><p>タイトル</p></th>
-          <th><p>url</p></th>
-          <th><p>タグ</p></th>
-          {pages.map(function(page, i) {
-            return (
-              <PageContainer page={page}/>
-            );
-            })
-          }
-        </table>
+
+        {pages.map(function(page, i) {
+          return (
+            <PageContainer page={page}/>
+          );
+          })
+        }
         </div>
       </div>
     )
