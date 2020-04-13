@@ -1,0 +1,76 @@
+.page-box {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #00BCD4;
+    width:350px;
+    height:100px;
+    margin-left:10px;
+    float:left;
+    background: #e4fcff;/*背景色*/
+    border-top: solid 6px #4682b4;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+}
+.page-box p{
+    margin: 0;
+    padding: 0;
+}
+
+.page-box:hover{
+  -webkit-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+
+
+.page-title{
+  color:var(--main-color);
+  font-weight: bold;
+  font-size:15px;
+  width:320px;
+  height:20px;
+  overflow: hidden;
+}
+
+
+.page-url{
+  overflow:"hidden";
+  position:relative;
+  font-size:12px;
+  margin-top:10px;
+  width:320px;
+  float:left;
+}
+
+
+.page-tags{
+
+}
+
+.font-title{
+  color:#339933;
+  font-weight: 900;
+}
+
+.font-url{
+  color:var(--main-second-color);
+  overflow:"hidden";
+
+}
+
+.font-tag{
+  margin-top:55px;
+  height:20px;
+}
+
+.tag {
+  display: inline-block;
+	margin: 0 .3em .3em 0;
+	padding: .3em;
+	line-height: 1;
+	text-decoration: none;
+	color: #fff;
+	background-color: #4682b4;
+  border-radius: 4px;
+}
+.tag:before {
+}
