@@ -1,0 +1,94 @@
+.whole{
+  width:1200px;
+  margin: auto;
+  padding:10px;
+}
+
+
+.input-div{
+  width:1200px;
+  margin: auto;
+  padding:10px;
+  height: 60px;
+}
+
+.input-title{
+  font-weight: bold;
+  color:#FFFFFF;
+}
+
+.input-add-page{
+  background-color: var(--main-color);
+}
+
+.input-search{
+  background-color: var(--main-second-color);
+}
+
+
+.input-part{
+  width:40%;
+  float: left;
+  padding-right: 10px;
+}
+
+.input-button{
+  width:10%;
+}
+
+.input-text{
+    margin: 0 left;
+    font-size: 16px;
+    size:50;
+    height: 20px;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+
+
+.text_underline::before,
+.text_underline::after{
+    position: absolute;
+    bottom: 0px;
+    width: 0px;
+    height: 2px;
+    content: '';
+    background-color: #3be5ae;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.text_underline::before{
+    left: 50%;
+}
+
+.text_underline::after{
+    right: 50%;
+}
+
+.input-text:focus + .text_underline::before,
+.input-text:focus + .text_underline::after{
+    width: 50%;
+}
+
+
+
+
+.search_bar{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 80%;
+
+}
+
+.search_icon{
+    height: 15px;
+    width: 15px;
+    padding: 5px 5px;
+}

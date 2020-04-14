@@ -3,17 +3,8 @@ import React from 'react';
 
 
 const initialState = {
-    pages:[{id:0,url:'http://example.com'}]
+    pages:[]
 };
-
-/*
-pages {
-  id,
-  url,
-  // category
-}
-
-*/
 
 export default function PageReducer(state = initialState,action){
 
