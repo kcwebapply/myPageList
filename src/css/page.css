@@ -6,9 +6,9 @@
     height:100px;
     margin-left:10px;
     float:left;
-    background: #e4fcff;/*背景色*/
+    background: #e4fcff;
     border-top: solid 6px #4682b4;
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
 }
 .page-box p{
     margin: 0;

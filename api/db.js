@@ -2,7 +2,7 @@ var db;
 
 const init = () => {
   const sqlite = require('sqlite3').verbose();
-  db = new sqlite.Database('pages.db');
+  db = new sqlite.Database('api/pages.db');
 }
 
 

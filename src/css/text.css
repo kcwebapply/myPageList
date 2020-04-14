@@ -64,7 +64,6 @@
     left: 50%;
 }
 
-/*中央から左へのアニメーション*/
 .text_underline::after{
     right: 50%;
 }
@@ -80,15 +79,15 @@
 .search_bar{
     padding-top: 5px;
     padding-bottom: 5px;
-    display: flex; /*アイコン、テキストボックスを調整する*/
-    align-items: center; /*アイコン、テキストボックスを縦方向の中心に*/
-    justify-content: center; /*アイコン、テキストボックスを横方向の中心に*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 20px;
     width: 80%;
 
 }
 
-.search_icon{ /*アイコンに一定のスペースを設ける*/
+.search_icon{
     height: 15px;
     width: 15px;
     padding: 5px 5px;
